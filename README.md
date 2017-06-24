@@ -10,6 +10,18 @@ Base Image
 
 The Basis are the official Ubuntu Docker Images
 
+Added GPG-Keys for APT
+========
+[NodeJS](https://deb.nodesource.com/gpgkey/nodesource.gpg.key)
+[Docker](https://download.docker.com/linux/ubuntu/gpg)
+
+Added Software-Packages
+========
+* curl
+* wget
+* apt-transport-https
+* ca-certificates
+
 Autobuild
 ========
 This Image will be updated if:
@@ -33,3 +45,55 @@ Building
 ========
 
 ```docker build -t tweyand/ubuntu```
+
+
+/etc/apt/sources.list
+========
+
+```docker run tweyand/ubuntu:17.04 grep -v '^#' /etc/apt/sources.list```
+deb http://archive.ubuntu.com/ubuntu/ zesty main restricted
+deb http://archive.ubuntu.com/ubuntu/ zesty-updates main restricted
+deb http://archive.ubuntu.com/ubuntu/ zesty universe
+deb-src http://archive.ubuntu.com/ubuntu/ zesty universe
+deb http://archive.ubuntu.com/ubuntu/ zesty-updates universe
+deb-src http://archive.ubuntu.com/ubuntu/ zesty-updates universe
+deb http://archive.ubuntu.com/ubuntu/ zesty multiverse
+deb http://archive.ubuntu.com/ubuntu/ zesty-updates multiverse
+deb http://archive.ubuntu.com/ubuntu/ zesty-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu/ zesty-security main restricted
+deb http://security.ubuntu.com/ubuntu/ zesty-security universe
+deb-src http://security.ubuntu.com/ubuntu/ zesty-security universe
+deb http://security.ubuntu.com/ubuntu/ zesty-security multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ zesty main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ zesty-updates main restricted
+
+```docker run tweyand/ubuntu:16.04 grep -v '^#' /etc/apt/sources.list```
+deb http://archive.ubuntu.com/ubuntu/ xenial main restricted
+deb http://archive.ubuntu.com/ubuntu/ xenial-updates main restricted
+deb http://archive.ubuntu.com/ubuntu/ xenial universe
+deb-src http://archive.ubuntu.com/ubuntu/ xenial universe
+deb http://archive.ubuntu.com/ubuntu/ xenial-updates universe
+deb-src http://archive.ubuntu.com/ubuntu/ xenial-updates universe
+deb http://archive.ubuntu.com/ubuntu/ xenial multiverse
+deb http://archive.ubuntu.com/ubuntu/ xenial-updates multiverse
+deb http://archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu/ xenial-security main restricted
+deb http://security.ubuntu.com/ubuntu/ xenial-security universe
+deb-src http://security.ubuntu.com/ubuntu/ xenial-security universe
+deb http://security.ubuntu.com/ubuntu/ xenial-security multiverse
+deb-src http://archive.ubuntu.com/ubuntu/ xenial main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ xenial-updates main restricted
+
+```docker run tweyand/ubuntu:14.04 grep -v '^#' /etc/apt/sources.list```
+deb http://archive.ubuntu.com/ubuntu/ trusty main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ trusty main restricted
+deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted
+deb http://archive.ubuntu.com/ubuntu/ trusty universe
+deb-src http://archive.ubuntu.com/ubuntu/ trusty universe
+deb http://archive.ubuntu.com/ubuntu/ trusty-updates universe
+deb-src http://archive.ubuntu.com/ubuntu/ trusty-updates universe
+deb http://archive.ubuntu.com/ubuntu/ trusty-security main restricted
+deb-src http://archive.ubuntu.com/ubuntu/ trusty-security main restricted
+deb http://archive.ubuntu.com/ubuntu/ trusty-security universe
+deb-src http://archive.ubuntu.com/ubuntu/ trusty-security universe
