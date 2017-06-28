@@ -5,9 +5,9 @@ echo '#             CLEANUP PROCESS               #'
 echo '#                                           #'
 echo '#############################################'
 echo ' '
-apt-get autoclean
-apt-get clean 
-apt autoremove
+apt-get autoclean -y
+apt-get clean -y
+apt autoremove -y
 rm -rf /var/cache/apt/*  
 rm -r /var/lib/apt/lists/*
 rm -rf /tmp/*
