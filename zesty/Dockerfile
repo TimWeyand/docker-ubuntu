@@ -7,7 +7,7 @@ COPY ./scripts/* /usr/local/bin/
 
 RUN DEBIAN_FRONTEND=noninteractive \
  && chmod +x /usr/local/bin/tweyand_docker*.sh \
- && tweyand_docker_environment_default_values.sh \
+ && eval `tweyand_docker_environment_default_values.sh` \
  && tweyand_docker_environment_configuration.sh \
  && echo "deb-src http://archive.ubuntu.com/ubuntu/ zesty main restricted" >> /etc/apt/sources.list \
  && echo "deb-src http://archive.ubuntu.com/ubuntu/ zesty-updates main restricted" >>  /etc/apt/sources.list \
